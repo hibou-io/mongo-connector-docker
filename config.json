@@ -2,7 +2,7 @@
     "__comment__": "Configuration options starting with '__' are disabled",
     "__comment__": "To enable them, remove the preceding '__'",
 
-    "mainAddress": "localhost:27017",
+    "mainAddress": "mongodb:27017",
     "oplogFile": "/var/log/mongo-connector/oplog.timestamp",
     "noDump": false,
     "batchSize": -1,
@@ -10,8 +10,9 @@
     "continueOnError": false,
 
     "logging": {
-        "type": "file",
-        "filename": "/var/log/mongo-connector/mongo-connector.log",
+    	"type": "stream",
+        "__type": "file",
+        "__filename": "/var/log/mongo-connector/mongo-connector.log",
         "__format": "%(asctime)s [%(levelname)s] %(name)s:%(lineno)d - %(message)s",
         "__rotationWhen": "D",
         "__rotationInterval": 1,
@@ -48,8 +49,8 @@
 
     "docManagers": [
         {
-            "docManager": "elastic_doc_manager",
-            "targetURL": "localhost:9200",
+            "docManager": "elastic2_doc_manager",
+            "targetURL": "elasticsearch:9200",
             "__bulkSize": 1000,
             "__uniqueKey": "_id",
             "__autoCommitInterval": null
