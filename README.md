@@ -16,3 +16,12 @@ docker run -d \
   --link some_mongo:mongodb \
   hibou/mongo-connector
 ```
+
+In theory, you don't need either volumes if you want to run it with the default config or 
+for testing purposes. You can also issue your own command to run mongo-connector with CLI 
+args instead of the config file.
+
+### Compatability
+
+I have tested this enough for my needs using the current mongo:3.2 (3.2.6) and 
+elasticsearch:2 (2.3.3).
