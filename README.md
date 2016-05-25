@@ -8,9 +8,11 @@ Automated build at dockerhub https://hub.docker.com/r/hibou/mongo-connector
 
 ### Example
 
-`docker run -d \
+```
+docker run -d \
   -v /path/data/mongo-connector:/var/log/mongo-connector \
   -v /path/conf/mongo-connector:/conf \
   --link some_elastic:elasticsearch \
   --link some_mongo:mongodb \
-  hibou/mongo-connector`
+  hibou/mongo-connector
+```
